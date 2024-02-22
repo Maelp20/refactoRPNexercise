@@ -1,3 +1,4 @@
+require_relative './operations'
 class ElementProcessor
 
   def initialize(stack)
@@ -5,21 +6,11 @@ class ElementProcessor
   end
 
   def process (element)
-    if element == "+" || element == "-" || element == "*" || element == "/"
-      num2 = @stack.pop
-      num1 = @stack.pop
-    end
-    case element
-      when "+"
-        @stack.push(num1 + num2)
-      when "-"
-        @stack.push(num1 - num2)
-      when "*"
-        @stack.push(num1 * num2)
-      when "/"
-        @stack.push(num1 / num2)
-      else
-        @stack.push(element.to_i)
+    if Operations.check_if_operator(element)
+      result = Operations.operate(operator: element, num2: @stack.pop, num1: @stack.pop)
+      @stack.push(result)
+    else
+      @stack.push(element.to_i)
     end
   end
 end

@@ -1,4 +1,4 @@
-require_relative './rpn.rb'
+require_relative './rpn'
 require 'rspec/autorun'
 
 class TestRPM
