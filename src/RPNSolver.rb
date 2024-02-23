@@ -1,4 +1,4 @@
-require_relative "./boot"
+require_relative "./RPNContainer"
 
 class RPNSolver
   include RPNDependencies['RPN.tools.parser', 'RPN.tools.calculator', 'RPN.tools.is_operator']
