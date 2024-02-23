@@ -3,7 +3,7 @@ require_relative "./boot"
 class RPNSolver
   include RPNDependencies['RPN.tools.parser', 'RPN.tools.calculator', 'RPN.tools.is_operator']
 
-  def solve(input)
+  def call(input)
     expression = @parser.call(input)
     stack = []
     expression.each do |element|
